@@ -1502,9 +1502,7 @@ update_element(Tab, Key, ElementSpec) ->
 -spec update_element(Tab, Key, ElementSpec, Meta) -> boolean() when
       Tab         :: tab(),
       Key         :: term(),
-      ElementSpec :: {Pos, Value} | [{Pos, Value}],
-      Pos         :: pos_integer(),
-      Value       :: term(),
+      ElementSpec :: {pos_integer(), any()} | [{pos_integer(), any()}],
       Meta        :: shards_meta:t().
 update_element(Tab, Key, ElementSpec, Meta) ->
   PartTid = shards_partition:tid(Tab, Key, Meta),
